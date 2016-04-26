@@ -94,4 +94,8 @@ void openssl_add_all_digests_int(void)
     EVP_add_digest(EVP_blake2b512());
     EVP_add_digest(EVP_blake2s256());
 #endif
+# ifndef OPENSSL_NO_ECDSA
+    EVP_add_digest(EVP_ecdsa());
+    EVP_add_digest(EVP_ecdsa256());
+# endif
 }
